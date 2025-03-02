@@ -1034,7 +1034,10 @@
       },
       "UnityEngine/1.0.0": {
         "runtime": {
-          "UnityEngine.dll": {}
+          "UnityEngine.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

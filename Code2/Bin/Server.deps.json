@@ -943,7 +943,10 @@
       },
       "ETTask/1.0.0": {
         "runtime": {
-          "ETTask.dll": {}
+          "ETTask.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Server.Model/1.0.0": {
@@ -953,7 +956,10 @@
           "UnityEngine": "1.0.0"
         },
         "runtime": {
-          "Server.Model.dll": {}
+          "Server.Model.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "ShareLib/1.0.0": {
@@ -970,12 +976,18 @@
           "protobuf-net": "2.4.0"
         },
         "runtime": {
-          "ShareLib.dll": {}
+          "ShareLib.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "UnityEngine/1.0.0": {
         "runtime": {
-          "UnityEngine.dll": {}
+          "UnityEngine.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
