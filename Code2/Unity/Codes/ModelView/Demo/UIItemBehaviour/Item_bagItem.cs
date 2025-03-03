@@ -6,7 +6,6 @@ namespace ET
 	[EnableMethod]
 	public  class Scroll_Item_bagItem : Entity,IAwake,IDestroy,IUIScrollItem 
 	{
-		public long DataId {get;set;}
 		private bool isCacheNode = false;
 		public void SetCacheMode(bool isCache)
 		{
@@ -122,7 +121,6 @@ namespace ET
 			this.m_E_SelectButton = null;
 			this.m_E_SelectImage = null;
 			this.uiTransform = null;
-			this.DataId = 0;
 		}
 
 		private UnityEngine.UI.Image m_E_QualityImage = null;
