@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "Server.App": {
-      "commandName": "Project",
-      "commandLineArgs": "--AppType=Watcher --StartConfig=\"StartConfig/LocalHost\""
-    }
-  }
-}
