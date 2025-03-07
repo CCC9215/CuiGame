@@ -10,8 +10,10 @@ namespace ET
             zoneScene.AddComponent<UIEventComponent>();
             zoneScene.AddComponent<RedDotComponent>();
             zoneScene.AddComponent<ResourcesLoaderComponent>();
+            zoneScene.AddComponent<FlyDamageValueViewComponent>();
         
             zoneScene.GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Login);
+
         }
     }
 }

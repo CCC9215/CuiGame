@@ -15,24 +15,41 @@ namespace ET
 			unitComponent.AddChild(unit);
 			unitComponent.Add(unit);
 
+			unit.AddComponent<UnitDBSaveComponent>();
+			
 			foreach (Entity entity in request.Entitys)
 			{
 				unit.AddComponent(entity);
 			}
 			
-			unit.AddComponent<MoveComponent>();
-			unit.AddComponent<PathfindingComponent, string>(scene.Name);
-			unit.Position = new Vector3(-10, 0, -10);
+			//unit.AddComponent<MoveComponent>();
+			//unit.AddComponent<PathfindingComponent, string>(scene.Name);
+			//unit.Position = new Vector3(-10, 0, -10);
 			
 			unit.AddComponent<MailBoxComponent>();
-			
+		
 			// 通知客户端创建My Unit
 			M2C_CreateMyUnit m2CCreateUnits = new M2C_CreateMyUnit();
 			m2CCreateUnits.Unit = UnitHelper.CreateUnitInfo(unit);
 			MessageHelper.SendToClient(unit, m2CCreateUnits);
 			
+			//通知客户端同步背包信息
+			ItemUpdateNoticeHelper.SyncAllBagItems(unit);
+			ItemUpdateNoticeHelper.SyncAllEquipItems(unit);
+
+			//通知客户端同步打造信息
+			ForgeHelper.SyncAllProduction(unit);
+			
+			TaskNoticeHelper.SyncAllTaskInfo(unit);
+			
+			unit.AddComponent<NumericNoticeComponent>();
+			unit.AddComponent<AdventureCheckComponent>();
+			
+			
+			
+			
 			// 加入aoi
-			unit.AddComponent<AOIEntity, int, Vector3>(9 * 1000, unit.Position);
+			//unit.AddComponent<AOIEntity, int, Vector3>(9 * 1000, unit.Position);
 
 			response.NewInstanceId = unit.InstanceId;
 			

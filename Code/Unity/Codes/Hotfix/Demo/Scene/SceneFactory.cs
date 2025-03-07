@@ -10,7 +10,16 @@ namespace ET
 			zoneScene.AddComponent<CurrentScenesComponent>();
             zoneScene.AddComponent<ObjectWait>();
             zoneScene.AddComponent<PlayerComponent>();
-            
+            zoneScene.AddComponent<AccountInfoComponent>();
+            zoneScene.AddComponent<ServerInfosComponent>();
+            zoneScene.AddComponent<RoleInfosComponent>();
+            zoneScene.AddComponent<BagComponent>();
+            zoneScene.AddComponent<EquipmentsComponent>();
+            zoneScene.AddComponent<ForgeComponent>();
+            zoneScene.AddComponent<TasksComponent>();
+            zoneScene.AddComponent<RankComponent>();
+            zoneScene.AddComponent<ChatComponent>();
+
             Game.EventSystem.Publish(new EventType.AfterCreateZoneScene() {ZoneScene = zoneScene});
             return zoneScene;
         }

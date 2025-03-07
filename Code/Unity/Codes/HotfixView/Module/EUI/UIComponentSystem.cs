@@ -21,8 +21,9 @@ namespace ET
             self.Destroy();
         }
     }
-
+    
     [FriendClass(typeof(ShowWindowData))]
+    [FriendClass(typeof(WindowCoreData))]
     [FriendClass(typeof(WindowCoreData))]
     [FriendClass(typeof(UIPathComponent))]
     [FriendClass(typeof(UIBaseWindow))]
