@@ -37,6 +37,7 @@ namespace ET
             }
 
             zoneScene.AddComponent<SessionComponent>().Session = accountSession;
+            // 心跳包 
             zoneScene.GetComponent<SessionComponent>().Session.AddComponent<PingComponent>();
             
             

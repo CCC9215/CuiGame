@@ -100,6 +100,7 @@ namespace ET
                         await DBManagerComponent.Instance.GetZoneDB(session.DomainZone()).Save<Account>(account);
                     }
 
+                    // ========== 查询账号中心服务器 ===============
                     StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(session.DomainZone(), "LoginCenter");
                     long loginCenterInstanceId = startSceneConfig.InstanceId;
                     var loginAccountResponse  = (L2A_LoginAccountResponse) await ActorMessageSenderComponent.Instance.Call(loginCenterInstanceId,new A2L_LoginAccountRequest(){AccountId = account.Id});
@@ -121,7 +122,7 @@ namespace ET
                     otherSession?.Disconnect().Coroutine();
                     session.DomainScene().GetComponent<AccountSessionsComponent>().Add(account.Id,session.InstanceId);
 
-                    // 长时间不登录 自动下线 
+                    // 长时间不登录 自动下线
                     session.AddComponent<AccountCheckOutTimeComponent, long>(account.Id);
 
                     string Token = TimeHelper.ServerNow().ToString() + RandomHelper.RandomNumber(int.MinValue, int.MaxValue).ToString();
